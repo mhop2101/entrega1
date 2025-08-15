@@ -1,0 +1,65 @@
+Domain AlpesPartners {
+	domainVisionStatement = "Orquestar, a escala global, la creación, gestión y escalamiento de asociaciones estratégicas (afiliados, influencers, lealtad y partners B2B) mediante una plataforma integral con tracking en tiempo real, pagos automáticos y analítica accionable."
+
+  Subdomain GestionDeAlianzas {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Ser la columna vertebral para administrar todo el ciclo de vida de las relaciones comerciales (descubrimiento, contratación, operación, auditoría y performance) con autonomía de equipos y cumplimiento normativo."
+	}
+
+	Subdomain ReclutamientoYMarketplace {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Descubrir, calificar y reclutar partners (afiliados, influencers, medios, agencias, integradores) a través de búsquedas avanzadas y marketplace, habilitando escalamiento rápido de la red."
+	}
+
+	Subdomain TrackingYAtribucion {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Registrar clics, eventos y conversiones en tiempo real mediante tags JS, píxeles y APIs server-to-server; atribuir resultados de manera precisa a lo largo de canales y campañas."
+	}
+
+	Subdomain PagosYCumplimiento {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Calcular y liquidar comisiones automáticamente en múltiples monedas y métodos de pago, con antifraude, auditoría y cumplimiento regulatorio extremo a extremo."
+	}
+
+	Subdomain AnaliticaYReporting {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Proveer dashboards, reportes de contribución, ROI y recomendaciones para optimizar portafolios de partners, campañas y presupuestos."
+	}
+
+	Subdomain MarketingDeAfiliados {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Gestionar programas CPA/CPL/CPC end-to-end: términos, onboarding, tracking, optimización y pagos globales para retailers, servicios financieros, viajes y más."
+	}
+
+	Subdomain InfluencersYCreadores {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Orquestar campañas con influencers/creadores: descubrimiento por audiencia, gestión de contratos/briefs, seguimiento de publicaciones y atribución de ingresos."
+	}
+
+	Subdomain LealtadYAdvocacy {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Activar y gestionar redes de embajadores (clientes/empleados) con enlaces únicos, seguimiento de referidos e incentivos automáticos."
+	}
+
+	Subdomain PartnerCRMYWorkflows {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Centralizar la relación con socios y marcas (comunicaciones, workflows, SLAs, catálogos y ofertas) para operación coordinada multi-equipo y multi-región."
+	}
+
+	Subdomain IntegracionesYAPIs {
+		type = SUPPORTING_DOMAIN
+		domainVisionStatement = "Exponer y consumir APIs (web y móviles) para eventos in-app, catálogos, contratos y pagos; facilitar interoperabilidad con stacks tecnológicos heterogéneos."
+	}
+
+	Subdomain FacturacionYFinanzas {
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Gestionar tesorería, conciliaciones, ciclos de facturación, impuestos y suscripciones por planes (Standard, Pro, Enterprise)."
+	}
+
+	Subdomain SeguridadYCompliance {
+		type = GENERIC_SUBDOMAIN
+		domainVisionStatement = "Garantizar controles de acceso, segregación de datos, monitoreo y cumplimiento (auditorías, políticas y evidencias) en toda la plataforma."
+	}
+
+}
+

@@ -1,0 +1,60 @@
+
+
+BoundedContext GestionIntegralDeAlianzas {
+    domainVisionStatement = "Orquestar el ciclo de vida completo de socios (descubrimiento, contratación, operación y performance), 
+    centralizando contratos, términos comerciales, SLAs y políticas de elegibilidad para habilitar escalamiento coordinado."
+}
+
+BoundedContext EjecucionYMedicionDeCampanas {
+    domainVisionStatement = "Gestionar campañas multicanal (afiliados, influencers, advocacy), incluyendo briefs, activaciones, 
+    seguimiento operativo, medición de resultados y optimización táctica."
+}
+
+BoundedContext TrackingAtribucionYPagos {
+    domainVisionStatement = "Registrar eventos y conversiones en tiempo real, atribuirlos de forma consistente y liquidar comisiones 
+    de manera automática con controles antifraude y cumplimiento regulatorio."
+}
+
+BoundedContext AnaliticaAvanzada {
+    domainVisionStatement = "Proveer dashboards, reporting de contribución/ROI y modelos (predicción, recomendación, atribución) 
+    para optimizar portafolios de socios, campañas y presupuestos."
+}
+
+BoundedContext GestionDeIntegracionesYCRMPartners {
+    domainVisionStatement = "Centralizar relaciones y workflows con partners y exponer/consumir APIs y conectores para interoperar 
+    con stacks heterogéneos (catálogos, eventos, contratos, pagos)."
+}
+
+BoundedContext AdministracionFinancieraYCompliance {
+    domainVisionStatement = "Gestionar facturación, tesorería, impuestos, planes de suscripción y cumplimiento normativo/seguridad, 
+    incluyendo conciliaciones y auditorías."
+}
+
+ContextMap AlpesPartners {
+    state = TO_BE
+    contains GestionIntegralDeAlianzas
+    contains EjecucionYMedicionDeCampanas
+    contains TrackingAtribucionYPagos
+    contains AnaliticaAvanzada
+    contains GestionDeIntegracionesYCRMPartners
+    contains AdministracionFinancieraYCompliance
+
+    GestionIntegralDeAlianzas [U, PL, OHS] -> [D, CF] EjecucionYMedicionDeCampanas
+
+    EjecucionYMedicionDeCampanas [U, PL] -> [D, CF] TrackingAtribucionYPagos
+
+    GestionDeIntegracionesYCRMPartners [U, OHS, PL] -> [D, ACL] GestionIntegralDeAlianzas
+
+    GestionDeIntegracionesYCRMPartners [U, OHS, PL] -> [D, ACL] EjecucionYMedicionDeCampanas
+
+    TrackingAtribucionYPagos [U, PL] -> [D, CF] AnaliticaAvanzada
+
+    EjecucionYMedicionDeCampanas [U, PL] -> [D, CF] AnaliticaAvanzada
+
+    TrackingAtribucionYPagos [U, PL] -> [D, ACL] AdministracionFinancieraYCompliance
+
+    GestionIntegralDeAlianzas [P] <-> [P] AdministracionFinancieraYCompliance
+
+    GestionIntegralDeAlianzas [P] <-> [P] EjecucionYMedicionDeCampanas
+}
+

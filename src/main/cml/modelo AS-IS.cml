@@ -1,0 +1,48 @@
+// ===================== AS-IS (Monolito) =====================
+
+BoundedContext CoreComercial {
+    domainVisionStatement = "Agrupa Gestión de Alianzas y Campañas dentro del monolito."
+// Nota: modelo anémico y lógica dispersa.
+}
+
+BoundedContext OperacionRevenue {
+    domainVisionStatement = "Tracking, atribución y pagos dentro del monolito."
+// Nota: acoplamiento temporal entre módulos.
+}
+
+BoundedContext BackofficeReportes {
+    domainVisionStatement = "Reportes y analítica ejecutándose sobre la misma base transaccional."
+// Nota: reporting impacta el procesamiento transaccional.
+}
+
+BoundedContext IntegracionesYETL {
+    domainVisionStatement = "Integraciones punto a punto y ETL acopladas al modelo interno."
+// Nota: mapeos frágiles y dependencias implícitas.
+}
+
+BoundedContext FinanzasYCompliance {
+    domainVisionStatement = "Facturación, conciliaciones e impuestos."
+// Nota: dependencias fuertes con revenue.
+}
+
+ContextMap AlpesPartners {
+    state = AS_IS
+    contains CoreComercial
+    contains OperacionRevenue
+    contains BackofficeReportes
+    contains IntegracionesYETL
+    contains FinanzasYCompliance
+
+    CoreComercial [SK] <-> [SK] OperacionRevenue
+
+    OperacionRevenue [SK] <-> [SK] FinanzasYCompliance
+
+    CoreComercial [U] -> [D] BackofficeReportes
+
+    OperacionRevenue [U] -> [D] BackofficeReportes
+
+    CoreComercial [U] -> [D] IntegracionesYETL
+
+    OperacionRevenue [U] -> [D] IntegracionesYETL
+}
+
